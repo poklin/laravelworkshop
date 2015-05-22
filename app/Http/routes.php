@@ -23,3 +23,7 @@ Route::controllers([
 ]);
 
 Route::get('article','ArticlesController@index');
+Route::get('article/create','ArticlesController@create');
+Route::get('article/{id}','ArticlesController@show');
+Route::post('article','ArticlesController@store');
+
