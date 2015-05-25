@@ -22,8 +22,4 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
-Route::get('article','ArticlesController@index');
-Route::get('article/create','ArticlesController@create');
-Route::get('article/{id}','ArticlesController@show');
-Route::post('article','ArticlesController@store');
-
+Route::resource('article','ArticlesController');

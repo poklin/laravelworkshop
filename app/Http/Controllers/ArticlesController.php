@@ -2,9 +2,10 @@
 
 use App\Article;
 use App\Http\Requests;
+use App\Http\Requests\ArticleRequest;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Carbon\Carbon;
-use Request;
 
 
 class ArticlesController extends Controller {
@@ -12,7 +13,7 @@ class ArticlesController extends Controller {
 	//
 	public function index()
 	{
-	    $articles =  Article::latest('published_at')->unpublished()->get();
+	    $articles =  Article::latest('published_at')->published()->get();
 		// $articles = $articles->toArray();
 		
 		// print_r($articles);
@@ -35,7 +36,7 @@ class ArticlesController extends Controller {
 		// return view('articles.show', compact('$article'));
 		
 		$article = Article::findOrFail($id);
-		 dd($article->published_at->diffForHumans());
+		// dd($article->published_at->diffForHumans());
 		// print_r($articles);
 		// $articles = "Poklin";
 		return view('articles.show')->with('article',$article);
@@ -46,12 +47,24 @@ class ArticlesController extends Controller {
 		return view('articles.create');
 	}
 
-	public function store()
+	public function store(ArticleRequest $request)
 	{
-		$input = Request::all();
-
-		Article::create($input);
+		Article::create($request->all());
 
 		return redirect('article');
 	}
+
+	public function edit($id)
+	{
+		$article = Article::findOrFail($id);
+		return view('articles.edit')->with('article',$article);
+	}
+
+	public function update(ArticleRequest $request, $id)
+	{
+		$article = Article::findOrFail($id);
+		$article->update($request->all());
+		return redirect('article');
+	}
+
 }
