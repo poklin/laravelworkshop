@@ -17,9 +17,18 @@ Route::get('home', 'HomeController@index');
 
 Route::get('about','PagesController@about');
 
+Route::resource('article','ArticlesController');
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
 
-Route::resource('article','ArticlesController');
+Route::get('foo',['middleware' => 'manager', function()
+{
+	return "This Page May Only Be Viewed By Manager";
+}]);
+
+Route::get('foo/{bar}',function(){
+
+});
