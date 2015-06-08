@@ -28,11 +28,12 @@ class ArticlesController extends Controller {
 	public function index()
 	{
 	    $articles =  Article::latest('published_at')->published()->get();
+        $latest = Article::latest()->first();
 		// $articles = $articles->toArray();
 		
 		// print_r($articles);
 		// $articles = "Poklin";
-		return view('articles.index',compact('articles'));
+		return view('articles.index',compact('articles','latest'));
 		// return view('articles.index',compact($articles));
 		// return view('articles.index');
 	}

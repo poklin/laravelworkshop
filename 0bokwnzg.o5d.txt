@@ -1,0 +1,30 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	modified:   .idea/workspace.xml
+#	modified:   app/Http/Controllers/ArticlesController.php
+#	modified:   app/Providers/AppServiceProvider.php
+#	new file:   app/Providers/ViewComposerServiceProvider.php
+#	modified:   config/app.php
+#	modified:   gulpfile.js
+#	new file:   public/css/all.css
+#	new file:   public/css/all.css.map
+#	modified:   public/css/app.css
+#	modified:   public/css/app.css.map
+#	new file:   public/js/all.js
+#	new file:   public/js/all.js.map
+#	new file:   resources/assets/css/libs/bootstrap.min.css
+#	new file:   resources/assets/css/libs/select2.min.css
+#	modified:   resources/assets/less/app.less
+#	modified:   resources/views/app1.blade.php
+#	modified:   resources/views/articles/_form.blade.php
+#
+# Untracked files:
+#	resources/assets/js/
+#	resources/views/partials/nav.blade.php
+#
+

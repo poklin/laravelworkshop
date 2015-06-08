@@ -6231,5 +6231,8 @@ label,
 .checkbox label {
   font-weight: 300;
 }
+body {
+  padding-top: 60px;
+}
 
 /*# sourceMappingURL=app.css.map */
