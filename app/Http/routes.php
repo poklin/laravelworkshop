@@ -24,6 +24,9 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
+
+Route::get('tags/{tags}','TagsController@show');
+
 Route::get('foo',['middleware' => 'manager', function()
 {
 	return "This Page May Only Be Viewed By Manager";

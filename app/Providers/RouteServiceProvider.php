@@ -31,7 +31,13 @@ class RouteServiceProvider extends ServiceProvider {
 
 		// or if it is easy and small project and use below
 		// $router->model('article','App\Article');
-		
+
+
+        $router->bind('tags',function($name)
+        {
+            return \App\Tag::where('name',$name)->firstOrFail();
+        });
+
 	}
 
 	/**
